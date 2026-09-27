@@ -1,0 +1,27 @@
+# Render 部署配置
+# 本配置同时支持两种持久化方式，按环境变量选择：
+#   A) 云端 SQLite（推荐，免费层也能持久保存数据，跨设备同步）
+#      - 在 Render 后台配置: TURSO_URL、TURSO_TOKEN（可选）
+#   B) 本地 SQLite（免费层重启会丢数据，不推荐用于正式数据）
+
+services:
+  # 在线面料检测平台 Web 服务
+  - type: web
+    name: fabric-detection-platform
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
+      # 云端持久化（推荐）：填入你在 Turso 创建的数据库连接串
+      - key: TURSO_URL
+        sync: false
+      # 云端持久化认证令牌（可选，公开库可不填）
+      - key: TURSO_TOKEN
+        sync: false

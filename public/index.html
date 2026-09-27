@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线面料检测平台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="logo"><span class="logo-icon">🧵</span> 面料检测平台</div>
+    <nav id="nav">
+      <a href="#dashboard" data-view="dashboard" class="active"><span>📊</span> 工作台</a>
+      <a href="#inspections" data-view="inspections"><span>🔬</span> 面料检测</a>
+      <a href="#purchases" data-view="purchases"><span>🛒</span> 采购管理</a>
+      <a href="#fabrics" data-view="fabrics"><span>📚</span> 面料库</a>
+      <a href="#suppliers" data-view="suppliers"><span>🏭</span> 供应商</a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">ad</div>
+      <div>
+        <div class="user-name">admin</div>
+        <div class="user-role">采购部 · 采购员</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div id="view" class="view"></div>
+  </main>
+</div>
+
+<!-- 全局弹窗 -->
+<div id="modal-mask" class="modal-mask" style="display:none">
+  <div id="modal" class="modal"></div>
+</div>
+<div id="toast" class="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

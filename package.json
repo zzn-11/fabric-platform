@@ -1,0 +1,15 @@
+{
+  "name": "fabric-detection-platform",
+  "version": "1.0.0",
+  "description": "在线面料检测采购平台 - 全栈版(Express + SQLite + 静态前端)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node server/index.js"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.19.2"
+  }
+}

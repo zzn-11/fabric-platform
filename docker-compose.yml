@@ -1,0 +1,14 @@
+services:
+  fabric-platform:
+    build: .
+    image: fabric-platform:latest
+    container_name: fabric-platform
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - DB_PATH=/app/server/data/app.db
+    volumes:
+      # SQLite 数据持久化到宿主机，防止容器重建丢数据
+      - ./server/data:/app/server/data
+    restart: unless-stopped
